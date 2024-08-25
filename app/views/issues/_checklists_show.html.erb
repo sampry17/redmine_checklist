@@ -1,0 +1,12 @@
+<div id="checklists_container" style="display: none;">
+  <% @issues.each do |issue| %>
+    <div class="checklist-container" data-issue-id="<%= issue.id %>">
+      <ul id="checklist_items_<%= issue.id %>" class="checklist-items">
+        <% issue.checklists.each do |checklist_item| %>
+          <%= render :partial => 'checklists/checklist_item', :object => checklist_item %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
